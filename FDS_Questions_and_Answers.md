@@ -1,11 +1,10 @@
-Exp No:1.a Analyze the trend of data science job postings over the last
-decade
+EXP NO:1.a Analyze the trend of data science job postings over the last decade.
 
-Description: Use web scraping (e.g., BeautifulSoup) or APIs (e.g., LinkedIn API) to gather
+DESCRIPTION: Use web scraping (e.g., BeautifulSoup) or APIs (e.g., LinkedIn API) to gather
 data on the number of data science job postings each year. Use pandas for data manipulation
 and matplotlib/seaborn for visualization.
 
-Code:
+CODE:
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -18,10 +17,10 @@ plt.xlabel('Year')
 plt.ylabel('Number ofJob Postings')
 plt.show()
 ----------------------------------------------------------------------------------------------------------
-Exp No:1.b Analyze and visualize the distribution of various data science roles (Data
+EXP NO:1.b Analyze and visualize the distribution of various data science roles (Data
 Analyst, Data Engineer, Data Scientist, etc.) from a dataset.
 
-Description: Use a dataset of job postings and categorize them into different roles. Visualize
+DESCRIPTION: Use a dataset of job postings and categorize them into different roles. Visualize
 the distribution using pie charts or bar plots.
 
 CODE:
@@ -33,33 +32,31 @@ plt.xlabel('role')
 plt.ylabel('Count')
 plt.show()
 -----------------------------------------------------------------------------------------------------------
-Exp No:1.c Conduct an experiment to differentiate Structured , Un-structured and Semi
+EXP NO:1.c Conduct an experiment to differentiate Structured , Un-structured and Semi
 structured data based on data sets given.
 
-Description: Create small datasets for each type and explain their characteristics.
+DESCRIPTION: Create small datasets for each type and explain their characteristics.
 
 CODE:
-# Structured data example
 structured_data = pd.DataFrame({
 'ID': [1, 2, 3],
 'Name': ['Alice', 'Bob', 'Charlie'],
 'Age': [25, 30, 35]
 })
 print("Structured Data:\n", structured_data)
-# Unstructured data example
+
 unstructured_data = "This is an example of unstructured data. It can be a piece of text, an image,
 or a video file."
 print("\nUnstructured Data:\n", unstructured_data)
-# Semi-structured data example (JSON)
+
 semi_structured_data = {'ID': 1, 'Name': 'Alice', 'Attributes': {'Height': 165, 'Weight': 68}}
 print("\nSemi-structured Data:\n", semi_structured_data)
 -----------------------------------------------------------------------------------------------------------
-Exp No:1.d Conduct an experiment to encrypt and decrypt given sensitive data.
+EXP NO:1.d Conduct an experiment to encrypt and decrypt given sensitive data.
 
 Description: Use the cryptography library to encrypt and decrypt a piece of data
 
 CODE:
-# Generate key and encrypt data
 from cryptography.fernet import Fernet
 key = Fernet.generate_key()
 f = Fernet(key)
@@ -72,7 +69,7 @@ key = Fernet.generate_key()
 cipher_suite = Fernet(key)
 plain_text = b"Rajalakshmi Engineering College."
 cipher_text = cipher_suite.encrypt(plain_text)
-# Decrypt data
+
 decrypted_text = cipher_suite.decrypt(cipher_text)
 print("Original Data:", plain_text)
 print("Encrypted Data:", cipher_text)
@@ -87,33 +84,33 @@ CODE:
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-# Load the data into a pandas DataFrame
+
 file_path='C:\sales_data.csv'
 df = pd.read_csv(file_path)
-# Display the first few rows of the DataFrame
+
 print(df.head())
-# Check for missing values
+
 print(df.isnull().sum())
-# Fill or drop missing values if necessary
+
 df['Sales'].fillna(df['Sales'].mean(), inplace=True)
 df.dropna(subset=['Product', 'Quantity', 'Region'], inplace=True)
-# Summary statistics
+
 print(df.describe())
-# Group by product and calculate the total sales and quantity
+
 product_summary = df.groupby('Product').agg({
 'Sales': 'sum',
 'Quantity': 'sum'
 }).reset_index()
 print(product_summary)
 11
-# Bar plot of total sales by product
+
 plt.figure(figsize=(10, 6))
 plt.bar(product_summary['Product'], product_summary['Sales'])
 plt.xlabel('Product')
 plt.ylabel('Total Sales')
 plt.title('Total Sales by Product')
 plt.show()
-# Line plot of sales over time
+
 df['Date'] = pd.to_datetime(df['Date'])
 sales_over_time = df.groupby('Date').agg({'Sales': 'sum'}).reset_index()
 plt.figure(figsize=(10, 6))
@@ -122,14 +119,14 @@ plt.xlabel('Date')
 plt.ylabel('Total Sales')
 plt.title('SalesOver Time')
 plt.show()
-# Pivot table to analyze sales by region and product
+
 pivot_table = df.pivot_table(values='Sales', index='Region', columns='Product',
 aggfunc=np.sum, fill_value=0)
 print(pivot_table)
-# Correlation matrix
+
 correlation_matrix = df.corr()
 print(correlation_matrix)
-# Heatmap of the correlation matrix
+
 import seaborn as sns
 plt.figure(figsize=(8, 6))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
@@ -141,6 +138,7 @@ Exp No:3.a Conduct an experiment to show data visualization using line plot.
 Description: Take any sample data either through csv file or data fetched directly through code
 
 CODE:
+
 import matplotlib.pyplot as cricket
 Overs=list(range(5,51,5))
 Indian_Score=[30,55,90,129,165,200,239,270,310,350]
